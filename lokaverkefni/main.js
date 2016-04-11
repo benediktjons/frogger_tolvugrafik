@@ -71,16 +71,16 @@ window.onload = function init()
 var numLogs = 30;
 for(i = 0; i<numLogs; i++){
     if(i<5){
-        logs.push(new log(-52, 20*i, 0.7, 10));
+        logs.push(new log(-52, 20*i, 0.4, 10));
     }
     else if(i>5 && i<10){
-        logs.push(new log(-42, 20*i, -1, 15));
+        logs.push(new log(-42, 20*i, -0.5, 15));
     }
      else if(i>10 && i<15){
-        logs.push(new log(-32, 20*i, 1.5, 8));
+        logs.push(new log(-32, 20*i, 0.8, 12));
     }
      else{
-        logs.push(new log(-22, 20*i, -2, 20));
+        logs.push(new log(-22, 20*i, -1, 20));
     }
 }
 //-------------------------------------------------------------------------------------------------------------------------
@@ -112,28 +112,36 @@ for(i = 0; i<numLogs; i++){
                 if (frog.frogYPos>-100){
                     frog.frogYPos-=frog.frogSize;
                     frog.frogAngle = 180;
-                    console.log(frog.frogXPos,frog.frogYPos);
+                    frog.isRiding=false;
+                    //console.log(frog.frogXPos,frog.frogYPos);
+                    //console.log(frog.isRiding);
                 }
                 break;
             case (83 || 40): // s eða back arrow
                 if (frog.frogXPos<90){
                     frog.frogXPos+=2*frog.frogSize;
                     frog.frogAngle = 270;
-                    console.log(frog.frogXPos,frog.frogYPos);
+                    frog.isRiding=false;
+                    //console.log(frog.frogXPos,frog.frogYPos);
+                    //console.log(frog.isRiding);
                 }
                 break;
             case (87 || 38 ) : // w eða upp arrow
                 if (frog.frogXPos>-70){
                     frog.frogXPos-=2*frog.frogSize;
                     frog.frogAngle = 90;
-                    console.log(frog.frogXPos,frog.frogYPos);
+                    frog.isRiding=false;
+                    //console.log(frog.frogXPos,frog.frogYPos);
+                    //console.log(frog.isRiding);
                 }
                 break;
             case (68 || 39): // d eða right arrow
                 if (frog.frogYPos<100){
                     frog.frogYPos+=frog.frogSize;
                     frog.frogAngle = 0;
-                    console.log(frog.frogXPos,frog.frogYPos);
+                    frog.isRiding=false;
+                    //console.log(frog.frogXPos,frog.frogYPos);
+                    //console.log(frog.isRiding);
                 }
                 break;
 
@@ -152,7 +160,6 @@ function render()
 
     //mv = lookAt( vec3(frog.frogXPos+30,frog.frogYPos, 10 ), vec3(frog.frogXPos,frog.frogYPos,5.0 ), vec3(0.0, 0.0, 1.0) );
     mv = lookAt( vec3(frog.frogXPos+60,frog.frogYPos, 40 ), vec3(frog.frogXPos-60,frog.frogYPos,5.0 ), vec3(0.0, 0.0, 1.0) );
-    frog.render(mv);
 
     //-------------------------------------------------------------------------------------------------------------------------
     // renduerum bilana þannig .þeir birtist stoðugt upp a nytt og eru stoðugt a hreyfingu
@@ -179,6 +186,8 @@ function render()
         logs[j].update();
         //console.log(logs[j]);
     }
+    frog.update();
+    frog.render(mv);
 
     requestAnimFrame( render );
 }
