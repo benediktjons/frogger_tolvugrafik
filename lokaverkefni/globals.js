@@ -35,7 +35,7 @@ var mvLoc;
 var cars = [];
 var logs = [];
 
-
+var viewpoint=1;
 var grSize=1;
 // the 6 vertices of the ground
 var groundVertices = [

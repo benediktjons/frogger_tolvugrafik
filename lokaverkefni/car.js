@@ -47,18 +47,18 @@ car.prototype.render = function(mv){
     gl.vertexAttribPointer(vPosition, 3, gl.FLOAT, false, 0, 0);
 
     var mv1 = mv;
-//---------------------------------------------------------------------------------------------------------------------
-// lower body of the car
-//---------------------------------------------------------------------------------------------------------------------
+    //---------------------------------------------------------------------------------------------------------------------
+    // lower body of the car
+    //---------------------------------------------------------------------------------------------------------------------
     mv = mult(mv, translate(this.carXPos, this.carYPos, 3+this.carSize));
    // mv = mult(mv, scalem(8+this.carSize,15+this.carSize,5+this.carSize));
    mv = mult(mv, scalem(this.carWidth, this.carLength, this.carHeight));
 
     gl.uniformMatrix4fv(mvLoc, false, flatten(mv));
     gl.drawArrays(gl.TRIANGLES, 0, 36);
-//------------------------------------------------------------------------------------------------------------------------
-// upper part of the car
-//------------------------------------------------------------------------------------------------------------------------
+    //------------------------------------------------------------------------------------------------------------------------
+    // upper part of the car
+    //------------------------------------------------------------------------------------------------------------------------
     mv1 = mult(mv1, translate(this.ShiftX + this.carXPos, this.ShiftY + this.carYPos, this.ShiftZ+this.carSize));
    //mv1= mult(mv1, scalem(8+this.carSize, 6+this.carSize, 4+this.carSize));
    mv1 = mult(mv1, scalem(this.carWidth, this.carLength-9, this.carHeight -1));
