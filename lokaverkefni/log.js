@@ -7,9 +7,20 @@ function log(xPos, yPos, Speed, length){
     this.logLength = length;
     this.logWidth = 8;
     this.logHeight = 1;
+    this.isATurtle=false;
+    this.diveRange=70*Math.random();
 }
 
 log.prototype.update = function(){
+    if((this.logId % 2) == 0) this.isATurtle=true;
+    if (this.isATurtle) {
+        if(this.logYPos<this.diveRange && this.logYPos>=-this.diveRange){
+            this.logColor=BLUE;
+        }
+        else{
+            this.logColor=RED;
+        }
+    }
     if(this.logYPos > 150){
         this.logYPos = -150;
     }
@@ -19,8 +30,12 @@ log.prototype.update = function(){
     else{
         this.logYPos += this.logSpeed;
     }
-    frog.logCollisionCheck(this);
+    if (!this.isATurtle || this.logColor==RED){ //Hér þarf að skipta true út fyrir checki á hvort turtle sé í kafi
+        frog.logCollisionCheck(this);
+    }
 };
+
+
 
 log.prototype.render = function(mv){
     gl.uniform4fv(colorLoc, this.logColor);
