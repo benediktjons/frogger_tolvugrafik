@@ -59,7 +59,9 @@ frog.prototype.logCollisionCheck = function(l){
     if ( fx1<=lx2 && fy1<=ly2 && fx1>=lx1 && fy1>=ly1){
         frog.isRiding=true;
         frog.frogYPos+=l.logSpeed;
-        console.log(l.logId);
+        if (l.turtleIsUnderwater){
+            resetGame();
+        }
     }
     if (this.frogYPos<=-95 || this.frogYPos>=100){
         resetGame();

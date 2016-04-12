@@ -97,6 +97,8 @@ window.onload = function init()
     proj = perspective( 50.0, 1.0, 1.0, 500.0 );
     gl.uniformMatrix4fv(pLoc, false, flatten(proj));
 
+    resetGame();
+
   window.addEventListener("keydown", function(e){
     switch( e.keyCode ) {
 

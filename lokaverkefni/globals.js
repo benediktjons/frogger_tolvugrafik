@@ -11,6 +11,7 @@ var BLACK = vec4(0, 0, 0, 1.0);
 var WHITE = vec4(1.0, 1.0, 1.0, 1.0);
 var DARKGREEN = vec4(0.1, 0.7, 0.1, 1.0);
 var BROWN = vec4(0.545, 0.27, 0.075, 1.0);
+var TRANSPARENT = vec4(0,0,0,0);
 var numGroundVertices  = 6;
 
 
