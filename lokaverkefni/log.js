@@ -10,7 +10,6 @@ function log(xPos, yPos, Speed, length){
 }
 
 log.prototype.update = function(){
-
     if(this.logYPos > 150){
         this.logYPos = -150;
     }
@@ -21,11 +20,9 @@ log.prototype.update = function(){
         this.logYPos += this.logSpeed;
     }
     frog.logCollisionCheck(this);
-    logs=logs;
 };
 
 log.prototype.render = function(mv){
-    //debugger;
     gl.uniform4fv(colorLoc, this.logColor);
     gl.bindBuffer(gl.ARRAY_BUFFER, cubeBuffer);
     gl.vertexAttribPointer(vPosition, 3, gl.FLOAT, false, 0, 0);

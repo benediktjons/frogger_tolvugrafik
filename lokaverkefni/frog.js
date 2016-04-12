@@ -6,11 +6,9 @@ function frog(angle){
     this.frogAngle = angle || 90;
     this.frogDirectionX = Math.cos(radians(this.frogAngle)); // til þess hann fari ekki i x at þegar hann a ad fara i y att
     this.frogDirectionY = Math.sin(radians(this.frogAngle)); // -||-
-    this.frogStepSize = 1.5;
     this.frogWidth = this.frogSize;
     this.frogLength = this.frogSize;
     this.isRiding=false;
-
 }
 
 
@@ -26,7 +24,7 @@ frog.prototype.render = function(mv){
 
     gl.bindBuffer(gl.ARRAY_BUFFER, cubeBuffer);
     gl.vertexAttribPointer(vPosition, 3, gl.FLOAT, false, 0, 0);
-    gl.uniform4fv(colorLoc, DarkGREEN);
+    gl.uniform4fv(colorLoc, GREEN);
 
     gl.uniformMatrix4fv(mvLoc, false, flatten(mv));
     gl.drawArrays(gl.TRIANGLES, 0, 36);
@@ -81,15 +79,9 @@ frog.prototype.win = function(){
 
     if(this.frogXPos <= -60){
         console.log("WINNING");
-        /*if(this.frogTime === true){
-            startTime = (new Date).getTime();
-            this.frogTime = false;
-            console.log("hallo if lykkja");
-        }*/
         document.getElementById('vic').play();
-        var bool = confirm("WINNING, wana play agin?");
+        var bool = confirm("WINNING, wanna play again?");
         if(bool === true){
-
             resetGame();
         }
         else{

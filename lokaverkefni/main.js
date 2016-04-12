@@ -6,7 +6,7 @@ window.onload = function init()
     if ( !gl ) { alert( "WebGL isn't available" ); }
 
     gl.viewport( 0, 0, canvas.width, canvas.height );
-    gl.clearColor( 0, 0.5, 1, 0.5 );
+    gl.clearColor( 0, 0.5, 1, 0.8 );
 
     gl.enable(gl.DEPTH_TEST);
 
@@ -159,7 +159,7 @@ function render()
         mv = lookAt( vec3(200,0, 200 ), vec3(0,0,0 ), vec3(0.0, 0.0, 1.0) );
     }
     else if (viewpoint==1){
-        mv = lookAt( vec3(frog.frogXPos+60,frog.frogYPos, 40 ), vec3(frog.frogXPos-60,frog.frogYPos,5.0 ), vec3(0.0, 0.0, 1.0) );
+        mv = lookAt( vec3(frog.frogXPos+80,frog.frogYPos, 50 ), vec3(frog.frogXPos-60,frog.frogYPos,5.0 ), vec3(0.0, 0.0, 1.0) );
     }
 
     //-------------------------------------------------------------------------------------------------------------------------

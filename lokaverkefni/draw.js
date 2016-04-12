@@ -1,7 +1,7 @@
 // draw the ground
 function drawGround( mv ,size) {
 
-    gl.uniform4fv( colorLoc, GREEN );
+    gl.uniform4fv( colorLoc, DARKGREEN );
     
     mv = mult( mv, scalem( size, size, 0 ) );
 
