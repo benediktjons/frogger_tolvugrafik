@@ -111,21 +111,15 @@ for(i = 0; i<numLogs; i++){
         switch( e.keyCode ) {
 
             case (65 || 37): // a eða left arrow
-                if (frog.frogYPos>-100){
-                    frog.frogYPos-=frog.frogSize;
-                    frog.frogAngle = 180;
-                    frog.isRiding=false;
-                    //console.log(frog.frogXPos,frog.frogYPos);
-                    //console.log(frog.isRiding);
-                }
+                frog.frogYPos-=frog.frogSize;
+                frog.frogAngle = 180;
+                frog.isRiding=false;
                 break;
             case (83 || 40): // s eða back arrow
                 if (frog.frogXPos<90){
                     frog.frogXPos+=2*frog.frogSize;
                     frog.frogAngle = 270;
                     frog.isRiding=false;
-                    //console.log(frog.frogXPos,frog.frogYPos);
-                    //console.log(frog.isRiding);
                 }
                 break;
             case (87 || 38 ) : // w eða upp arrow
@@ -133,18 +127,12 @@ for(i = 0; i<numLogs; i++){
                     frog.frogXPos-=2*frog.frogSize;
                     frog.frogAngle = 90;
                     frog.isRiding=false;
-                    //console.log(frog.frogXPos,frog.frogYPos);
-                    //console.log(frog.isRiding);
                 }
                 break;
             case (68 || 39): // d eða right arrow
-                if (frog.frogYPos<100){
-                    frog.frogYPos+=frog.frogSize;
-                    frog.frogAngle = 0;
-                    frog.isRiding=false;
-                    //console.log(frog.frogXPos,frog.frogYPos);
-                    //console.log(frog.isRiding);
-                }
+                frog.frogYPos+=frog.frogSize;
+                frog.frogAngle = 0;
+                frog.isRiding=false;
                 break;
 
         }});
@@ -176,8 +164,10 @@ function render()
     drawStreet(mv,20,500);
     drawRiver(mv,20,500);
     drawGround(mv,500);
-    drawEndOfWorld(mv,1000,5,1);
-    drawEndOfWorld(mv,1000,5,-1);
+    drawBox(mv,200,5,1,1);
+    drawBox(mv,200,5,-1,1);
+    drawBox(mv,200,5,1,0);
+    drawBox(mv,200,5,-1,0);
 
     //-------------------------------------------------------------------------------------------------------------------------------------
     // teiknum the logs

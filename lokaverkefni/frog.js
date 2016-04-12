@@ -62,7 +62,7 @@ frog.prototype.logCollisionCheck = function(l){
         frog.frogYPos+=l.logSpeed;
         console.log(l.logId);
     }
-    if (this.frogYPos<-100 || this.frogYPos>100){
+    if (this.frogYPos<=-95 || this.frogYPos>=100){
         resetGame();
     }
 };
@@ -70,10 +70,9 @@ frog.prototype.logCollisionCheck = function(l){
 frog.prototype.inWaterCheck= function(){
     if (this.frogXPos<=-20 && this.frogXPos>=-50){
         if (frog.isRiding){
-            console.log("IM ON A LOG");
         }
         else{
-            console.log("not on log");
+            resetGame();
         }
     }
 }

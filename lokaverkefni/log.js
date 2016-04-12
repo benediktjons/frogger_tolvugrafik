@@ -22,8 +22,6 @@ log.prototype.update = function(){
     }
     frog.logCollisionCheck(this);
     logs=logs;
-    debugger;
-
 };
 
 log.prototype.render = function(mv){
