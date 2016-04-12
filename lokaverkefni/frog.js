@@ -45,6 +45,7 @@ frog.prototype.carCollisionCheck = function(c){
         fx2<=cx2 && fy2<=cy2 && fx2>=cx1 && fy2>=cy1 ||
          fx1<=cx2 && fy2<=cy2 && fx1>=cx1 && fy2>=cy1 ||
          fx2<=cx2 && fy1<=cy2 && fx2>=cx1 && fy1>=cy1){
+        document.getElementById('boom').play();
         resetGame();
     }
 };
@@ -70,6 +71,7 @@ frog.prototype.inWaterCheck= function(){
         if (frog.isRiding){
         }
         else{
+            document.getElementById('splash').play();
             resetGame();
         }
     }
