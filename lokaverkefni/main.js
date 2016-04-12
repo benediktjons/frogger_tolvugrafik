@@ -47,21 +47,21 @@ window.onload = function init()
     }
 */
 
-    for (var i = 0; i<numCars; i++){
+for (var i = 0; i<numCars; i++){
         color = vec4(Math.random(), Math.random(), Math.random(), 1);
         whatColor = Math.round((Math.random()*(colors.length-1)));
         if(i > 15){
-            cars.push(new car(colors[2], 20*i - 100, 57, 1));
-        }
-        else if(i > 4 && i<8){
-            cars.push(new car(colors[3], 20*(i-4) - 100, 37, -3));
-            //cars.push(new car(colors[whatColor], 20*i - 100, 0, 2));
+            cars.push(new car(colors[2], 50*(i-16) - 100, 57, 1));
         }
         else if(i > 10 && i<15){
-            cars.push(new car(colors[4], 20*(i-10) - 100, 47, 2));
+            cars.push(new car(colors[4], 20*i - 200,  47, 2));
+        }
+        else if(i > 4 && i<8){
+            cars.push(new car(colors[3], 40*i - 200, 37, -3));
+            //cars.push(new car(colors[whatColor], 20*i - 100, 0, 2));
         }
         else{
-            cars.push(new car(colors[1], 20*(i-15) - 100, 27, -0.5));
+            cars.push(new car(colors[1], i*30 - 30 , 27, -0.5));
         }
 }
 //-----------------------------------------------------------------------------------------------------------------------
@@ -82,7 +82,7 @@ for(i = 0; i<numLogs; i++){
     }
      else if(i>=logsOnLane*3 && i<logsOnLane*4){
         logs.push(new log(-22, 30*(i-logsOnLane*3), -1, 20));
-    }   
+    }
     logs[i].logId=i;
 }
 //-------------------------------------------------------------------------------------------------------------------------
@@ -191,6 +191,7 @@ function render()
     }
     frog.update();
     frog.render(mv);
+       frog.win();
 
     requestAnimFrame( render );
 }

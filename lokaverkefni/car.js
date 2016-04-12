@@ -18,7 +18,7 @@ function car(color, yPos, xPos, speed){
 //car.prototype.carUpperX = this.carXPos  - 0.2;
 car.prototype.update = function(){
 
-    
+
   //mv1 = mult(mv1, translate(-0.2+this.carXPos, -1+this.carYPos, 7+this.carWidth));
 
     if(this.carSpeed < 0){
@@ -27,10 +27,10 @@ car.prototype.update = function(){
 
     // ef bilinn er komin x langt utfyrir
     if(this.carYPos > 150){
-        this.carYPos = -100 + Math.random()*10;
+        this.carYPos = -120 ;
     }
     else if(this.carYPos < -150){
-        this.carYPos = 130 + Math.random()*10;
+        this.carYPos = 120;
     }
     else{
         this.carYPos += this.carSpeed;
