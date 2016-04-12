@@ -54,34 +54,36 @@ window.onload = function init()
             cars.push(new car(colors[2], 20*i - 100, 57, 1));
         }
         else if(i > 4 && i<8){
-            cars.push(new car(colors[3], 20*i - 100, 37, -3));
+            cars.push(new car(colors[3], 20*(i-4) - 100, 37, -3));
             //cars.push(new car(colors[whatColor], 20*i - 100, 0, 2));
         }
         else if(i > 10 && i<15){
-            cars.push(new car(colors[4], 20*i - 100, 47, 2));
+            cars.push(new car(colors[4], 20*(i-10) - 100, 47, 2));
         }
         else{
-            cars.push(new car(colors[1], 20*i - 100, 27, -0.5));
+            cars.push(new car(colors[1], 20*(i-15) - 100, 27, -0.5));
         }
 }
 //-----------------------------------------------------------------------------------------------------------------------
 // buum til trjabutana
 //------------------------------------------------------------------------------------------------------------------------
 
-var numLogs = 30;
+var logsOnLane=5;
+var numLogs = logsOnLane*4;
 for(i = 0; i<numLogs; i++){
-    if(i<5){
-        logs.push(new log(-52, 20*i, 0.4, 10));
+    if(i<logsOnLane){
+        logs.push(new log(-52, -30*i, 0.4, 14));
     }
-    else if(i>5 && i<10){
-        logs.push(new log(-42, 20*i, -0.5, 15));
+    else if(i>=logsOnLane && i<logsOnLane*2){
+        logs.push(new log(-42, 20*(i-logsOnLane), -0.5, 15));
     }
-     else if(i>10 && i<15){
-        logs.push(new log(-32, 20*i, 0.8, 12));
+     else if(i>=logsOnLane*2 && i<logsOnLane*3){
+        logs.push(new log(-32, 30*(i-logsOnLane*2), 0.8, 12));
     }
-     else{
-        logs.push(new log(-22, 20*i, -1, 20));
-    }
+     else if(i>=logsOnLane*3 && i<logsOnLane*4){
+        logs.push(new log(-22, 30*(i-logsOnLane*3), -1, 20));
+    }   
+    logs[i].logId=i;
 }
 //-------------------------------------------------------------------------------------------------------------------------
 //-----------------------------------------------------------------------------------------------------------------------

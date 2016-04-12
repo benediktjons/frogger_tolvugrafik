@@ -15,14 +15,10 @@ function frog(angle){
 
 
 frog.prototype.update = function(angle){
-    frog.isDrowning();
-    /*this.frogAngle = angle;
-    this.frogXPos += 2*this.frogDirectionX;
-    this.frogYPos += 2*this.frogDirectionY;*/
+    frog.inWaterCheck();
 };
 
 frog.prototype.render = function(mv){
-    //var mv=vec4;
     mv = mult(mv, translate(this.frogXPos, this.frogYPos, this.frogWidth));
     // ef vid viljum rotadea ta kemur tad her
     mv = mult(mv, rotateZ(-this.frogAngle));
@@ -64,20 +60,20 @@ frog.prototype.logCollisionCheck = function(l){
     if ( fx1<=lx2 && fy1<=ly2 && fx1>=lx1 && fy1>=ly1){
         frog.isRiding=true;
         frog.frogYPos+=l.logSpeed;
+        console.log(l.logId);
     }
     if (this.frogYPos<-100 || this.frogYPos>100){
         resetGame();
     }
 };
 
-frog.prototype.isDrowning= function(){
+frog.prototype.inWaterCheck= function(){
     if (this.frogXPos<=-20 && this.frogXPos>=-50){
         if (frog.isRiding){
             console.log("IM ON A LOG");
         }
         else{
             console.log("not on log");
-            resetGame();
         }
     }
 }

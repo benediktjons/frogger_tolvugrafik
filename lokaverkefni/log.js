@@ -12,15 +12,18 @@ function log(xPos, yPos, Speed, length){
 log.prototype.update = function(){
 
     if(this.logYPos > 150){
-        this.logYPos = -100 + Math.random()*10;
+        this.logYPos = -150;
     }
     else if(this.logYPos < -150){
-        this.logYPos = 130 + Math.random()*10;
+        this.logYPos = 150;
     }
     else{
         this.logYPos += this.logSpeed;
     }
     frog.logCollisionCheck(this);
+    logs=logs;
+    debugger;
+
 };
 
 log.prototype.render = function(mv){
