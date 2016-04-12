@@ -43,7 +43,7 @@ frog.prototype.carCollisionCheck = function(c){
     cx2=c.carXPos+c.carWidth/2
     cy1=c.carYPos-c.carLength/2
     cy2=c.carYPos+c.carLength/2
-    if ( fx1<=cx2 && fy1<=cy2 && fx1>=cx1 && fy1>=cy1 || 
+    if ( fx1<=cx2 && fy1<=cy2 && fx1>=cx1 && fy1>=cy1 ||
         fx2<=cx2 && fy2<=cy2 && fx2>=cx1 && fy2>=cy1 ||
          fx1<=cx2 && fy2<=cy2 && fx1>=cx1 && fy2>=cy1 ||
          fx2<=cx2 && fy1<=cy2 && fx2>=cx1 && fy1>=cy1){
@@ -76,4 +76,28 @@ frog.prototype.inWaterCheck= function(){
             console.log("not on log");
         }
     }
-}
+};
+
+frog.prototype.win = function(){
+
+    if(this.frogXPos <= -60){
+        console.log("WINNING");
+        /*if(this.frogTime === true){
+            startTime = (new Date).getTime();
+            this.frogTime = false;
+            console.log("hallo if lykkja");
+        }*/
+        document.getElementById('vic').play();
+        var bool = confirm("WINNING, wana play agin?");
+        if(bool === true){
+
+            resetGame();
+        }
+        else{
+            location.assign("http://www.visir.is/forsida");
+        }
+
+    }
+};
+
+
