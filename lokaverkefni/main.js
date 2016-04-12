@@ -134,6 +134,14 @@ for(i = 0; i<numLogs; i++){
                 frog.frogAngle = 0;
                 frog.isRiding=false;
                 break;
+            case (32): // bilstöng
+                if (viewpoint==0){
+                    viewpoint=1;
+                }
+                else{
+                    viewpoint=0;
+                }
+                break;
 
         }});
 
@@ -147,9 +155,12 @@ function render()
 
     var mv = mat4();
 
-
-    //mv = lookAt( vec3(frog.frogXPos+30,frog.frogYPos, 10 ), vec3(frog.frogXPos,frog.frogYPos,5.0 ), vec3(0.0, 0.0, 1.0) );
-    mv = lookAt( vec3(frog.frogXPos+60,frog.frogYPos, 40 ), vec3(frog.frogXPos-60,frog.frogYPos,5.0 ), vec3(0.0, 0.0, 1.0) );
+    if (viewpoint==0){
+        mv = lookAt( vec3(200,0, 200 ), vec3(0,0,0 ), vec3(0.0, 0.0, 1.0) );
+    }
+    else if (viewpoint==1){
+        mv = lookAt( vec3(frog.frogXPos+60,frog.frogYPos, 40 ), vec3(frog.frogXPos-60,frog.frogYPos,5.0 ), vec3(0.0, 0.0, 1.0) );
+    }
 
     //-------------------------------------------------------------------------------------------------------------------------
     // renduerum bilana þannig .þeir birtist stoðugt upp a nytt og eru stoðugt a hreyfingu
