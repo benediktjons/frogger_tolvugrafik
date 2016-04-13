@@ -9,7 +9,7 @@ window.onload = function init()
     gl.clearColor( 0, 0.5, 1, 0.8 );
 
     gl.enable(gl.DEPTH_TEST);
- 
+
     //  Load shaders and initialize attribute buffers
     var program = initShaders( gl, "vertex-shader", "fragment-shader" );
     gl.useProgram( program );
@@ -56,7 +56,7 @@ window.onload = function init()
                 }
                 break;
             case 40:// back arrow
-            case 83:// s 
+            case 83:// s
                 if (frog.frogXPos<90 && !frogFuneral){
                     frog.frogXPos+=2*frog.frogSize;
                     frog.frogAngle = 270;
@@ -110,17 +110,26 @@ window.onload = function init()
     });
 document.getElementById("lvl-easy").addEventListener("click", function(){
     difficulty=0.3;
+    document.getElementById("lvl-easy").style.color = "orange";
+    document.getElementById("lvl-medium").style.color = "black";
+    document.getElementById("lvl-hard").style.color = "black";
     resetGame();
 });
 document.getElementById("lvl-medium").addEventListener("click", function(){
     difficulty=0.6;
+        document.getElementById("lvl-easy").style.color = "black";
+    document.getElementById("lvl-medium").style.color = "orange";
+    document.getElementById("lvl-hard").style.color = "black";
     resetGame();
 });
 document.getElementById("lvl-hard").addEventListener("click", function(){
     difficulty=1;
+        document.getElementById("lvl-easy").style.color = "black";
+    document.getElementById("lvl-medium").style.color = "black";
+    document.getElementById("lvl-hard").style.color = "orange";
     resetGame();
 });
-
+document.getElementById("myBtn").addEventListener("click",  backMusic);
 function backMusic() {
       if(boolBackSound === true){
                     document.getElementById('REQ').muted = true;
@@ -133,8 +142,7 @@ function backMusic() {
                     document.getElementById("myBtn").innerHTML = "Mute";
                 }
 }
-document.getElementById("myBtn2").addEventListener("click", allMusic);
-document.getElementById("myBtn2").addEventListener("click", allMusic);
+
 document.getElementById("myBtn2").addEventListener("click", allMusic);
 
 function allMusic(){
