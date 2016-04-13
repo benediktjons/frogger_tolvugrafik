@@ -70,9 +70,7 @@ frog.prototype.logCollisionCheck = function(l){
 
 frog.prototype.inWaterCheck= function(){
     if (this.frogXPos<=-20 && this.frogXPos>=-50){
-        if (frog.isRiding){
-        }
-        else{
+        if (!frog.isRiding){
             document.getElementById('splash').play();
             resetGame();
         }

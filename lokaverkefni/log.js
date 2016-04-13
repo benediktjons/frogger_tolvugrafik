@@ -9,7 +9,7 @@ function log(xPos, yPos, Speed, length){
     this.logHeight = 1;
     this.isATurtle=false;
     this.turtleIsUnderwater=false;
-    this.diveRange=70*Math.random();
+    this.diveRange=200*Math.random()-100;
 }
 
 log.prototype.update = function(){
@@ -46,7 +46,7 @@ log.prototype.render = function(mv){
     gl.bindBuffer(gl.ARRAY_BUFFER, cubeBuffer);
     gl.vertexAttribPointer(vPosition, 3, gl.FLOAT, false, 0, 0);
 
-    mv = mult(mv, translate(this.logXPos, this.logYPos, 2));
+    mv = mult(mv, translate(this.logXPos, this.logYPos, 1.5));
     mv = mult(mv, scalem(this.logWidth, this.logLength, this.logHeight));
 
     gl.uniformMatrix4fv(mvLoc, false, flatten(mv));

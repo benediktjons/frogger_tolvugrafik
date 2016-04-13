@@ -1,9 +1,18 @@
-// draw the ground
+function drawScenery(mv){
+    drawStreet(mv,20,500);
+    drawRiver(mv,20,500);
+    drawGround(mv,500);
+    drawBox(mv,200,5,1,1);
+    drawBox(mv,200,5,-1,1);
+    drawBox(mv,200,5,1,0);
+    drawBox(mv,200,5,-1,0);
+}
+
 function drawGround( mv ,size) {
 
     gl.uniform4fv( colorLoc, DARKGREEN );
     
-    mv = mult( mv, scalem( size, size, 0 ) );
+    mv = mult( mv, scalem( size/4, size, 0 ) );
 
     gl.bindBuffer( gl.ARRAY_BUFFER, groundBuffer );
     gl.vertexAttribPointer( vPosition, 3, gl.FLOAT, false, 0, 0 );
