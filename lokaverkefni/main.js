@@ -141,8 +141,18 @@ for(i = 0; i<numLogs; i++){
                 else{
                     viewpoint=0;
                 }
-                break;
+                break
+            case(88):// x-takkinn til ad mute-a
+                if(boolBackSound === true){
+                    document.getElementById('REQ').muted = true;
+                    boolBackSound = false;
+                }
+                else{
+                    document.getElementById('REQ').muted = false;
+                    boolBackSound = true;
+                }
 
+                break;
         }});
 
     render();
