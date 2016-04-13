@@ -19,6 +19,12 @@ h1{
   text-shadow: 3px 3px 0px rgba(0,0,0,0.2);
   color: orange;
 }
+aside{
+  float:left;
+}
+div.main{
+  float:right;
+}
 p{
     font: 22px;
     color: orange;
@@ -26,16 +32,26 @@ p{
      font-family:Times New Roman, Times, serif;
 }
 .box{
-    width: 300px;
+    width: 280px;
     padding: 30px;
-    margin: 30px;
+    margin: 10px;
     border: 2px solid black;
     box-sizing: border-box;
 }
-.right{
+.easy{
   position:absolute;
-  right: 0.5%;
-  top:450px;
+  right: 5%;
+  top:300px;
+}
+.medium{
+  position:absolute;
+  right: 5%;
+  top:400px;
+}
+.hard{
+  position:absolute;
+  right: 5%;
+  top:500px;
 }
 #lvl-easy{
   color:black;
@@ -83,4 +99,14 @@ button:active{
 
 button:active;{
   color:black;
+}
+#myBtn{
+  position:absolute;
+  left:50px;
+  top:450px;
+}
+#myBtn2{
+  position:absolute;
+  left:50px;
+  top:550px;
 }
