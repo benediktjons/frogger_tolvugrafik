@@ -14,7 +14,12 @@ var DARKGREEN = vec4(0.1, 0.7, 0.1, 1.0);
 var BROWN = vec4(0.545, 0.27, 0.075, 1.0);
 
 
+
+var boolBackSound =true;
+var boolSound = true;
+
 var numGroundVertices  = 6;
+
 
 var colorLoc;
 var mvLoc;

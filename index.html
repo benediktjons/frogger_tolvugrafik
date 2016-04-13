@@ -1,5 +1,8 @@
 
-<html><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252"><script id="vertex-shader" type="x-shader/x-vertex">
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<link type="text/css" rel="stylesheet" href="style.css"/>
+<script id="vertex-shader" type="x-shader/x-vertex">
+
 
 attribute  vec4 vPosition;
 
@@ -46,8 +49,20 @@ Oops ... your browser doesn't support the HTML5 canvas element
 <br>
 
 <audio id ="vic"><source src="V.mp3" type="audio/mpeg" /></audio>
-<audio id ="boom"><source src="W.mp3" type="audio/mpeg" /></audio>
+<audio id ="boom"><source src="CRW.mp3" type="audio/mpeg" /></audio>
 <audio id ="splash"><source src="S.mp3" type="audio/mpeg" /></audio>
+<audio id ="REQ" autoplay="autoplay"><source src="REQ.mp3" type="audio/mpeg" /></audio>
 
+<div class ="box">
+    <h1>Instructions</h1>
+    <p> Move left press: a or left arrow</p>
+    <p>Move right press d or left arrow</p>
+    <p>Move upp press w or upp arrow</p>
+    <p>Move back press s or down arrow</p>
+    <p>Change view press space</p>
+    <p>Mute/unmute press x</p>
+</div>
+<button id="myBtn2">Mute all</button>
+<button id="myBtn">Mute</button>
 
 </body></html>

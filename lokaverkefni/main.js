@@ -86,9 +86,61 @@ window.onload = function init()
                 else{
                     viewpoint=0;
                 }
+
+                break
+            case(88):// x-takkinn til ad mute-a
+               if(boolSound === true){
+                    document.getElementById("REQ").muted = true;
+                    document.getElementById("boom").muted = true;
+                    document.getElementById("splash").muted = true;
+                    document.getElementById("myBtn2").style.color = "orange";
+                    boolSound = false;
+
+                  }
+            else{
+                document.getElementById("REQ").muted = false;
+                document.getElementById("boom").muted = false;
+                document.getElementById("splash").muted = false;
+                document.getElementById("myBtn2").style.color = "white";
+                boolSound = true;
+            }
+
                 break;
+
         }
     });
+document.getElementById("myBtn").addEventListener("click", backMusic);
+document.getElementById("myBtn2").addEventListener("click", allMusic);
+function backMusic() {
+      if(boolBackSound === true){
+                    document.getElementById('REQ').muted = true;
+                    boolBackSound = false;
+                    document.getElementById("myBtn").innerHTML = "Sound";
+                }
+                 else{
+                    document.getElementById('REQ').muted = false;
+                    boolBackSound = true;
+                    document.getElementById("myBtn").innerHTML = "Mute";
+                }
+}
+
+function allMusic(){
+    if(boolSound === true){
+        document.getElementById("REQ").muted = true;
+        document.getElementById("boom").muted = true;
+        document.getElementById("splash").muted = true;
+        document.getElementById("myBtn2").style.color = "orange";
+        boolSound = false;
+
+    }
+    else{
+        document.getElementById("REQ").muted = false;
+        document.getElementById("boom").muted = false;
+        document.getElementById("splash").muted = false;
+        document.getElementById("myBtn2").style.color = "white";
+        boolSound = true;
+    }
+}
 
     render();
 };
@@ -117,10 +169,10 @@ function render()
         cars[j].render(mv);
         cars[j].update();
     }
-    
+
     //Draw the scenery
     drawScenery(mv);
-    
+
     //Render the logs and update their positions
     for(j = 0; j<logs.length; j++){
         logs[j].render(mv);
