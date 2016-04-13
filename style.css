@@ -24,9 +24,10 @@ h1{
   color: orange;
 }
 p{
-    font: 20px;
+    font: 22px;
     color: ORANGE;
      font-weight: bold;
+     font-family:Times New Roman, Times, serif;
 }
 .box{
     width: 300px;
