@@ -1,6 +1,7 @@
 var canvas;
 var gl;
 
+//Define color variables
 var BLUE = vec4(0.0, 0.0, 1.0, 1.0);
 var RED = vec4(1.0, 0.0, 0.0, 1.0);
 var GREEN =vec4(0.0, 1.0, 0.0, 1.0);
@@ -9,16 +10,16 @@ var CYAN = vec4(0.0, 1.0, 1.0, 1.0);
 var MAGNETA = vec4(1.0, 0.0, 1.0, 1.0);
 var BLACK = vec4(0, 0, 0, 1.0);
 var WHITE = vec4(1.0, 1.0, 1.0, 1.0);
-var DarkGREEN = vec4(0.1, 0.5, 0.1, 1.0);
+var DARKGREEN = vec4(0.1, 0.7, 0.1, 1.0);
 var BROWN = vec4(0.545, 0.27, 0.075, 1.0);
-var numGroundVertices  = 6;
+
 
 
 var boolBackSound =true;
+var boolSound = true;
 
+var numGroundVertices  = 6;
 
-// current viewpoint
-var view = 1;
 
 var colorLoc;
 var mvLoc;
@@ -36,9 +37,14 @@ var lookY=0.0;
 var mvLoc;
 
 var cars = [];
+
 var logs = [];
 
+
+//Define the current viewpoint
 var viewpoint=1;
+
+
 var grSize=1;
 // the 6 vertices of the ground
 var groundVertices = [
