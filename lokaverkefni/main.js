@@ -49,13 +49,15 @@ window.onload = function init()
         switch( e.keyCode ) {
             case 37:// left arrow
             case 65:// a
-                frog.frogYPos-=frog.frogSize;
-                frog.frogAngle = 180;
-                frog.isRiding=false;
+                if (!frogFuneral){
+                    frog.frogYPos-=frog.frogSize;
+                    frog.frogAngle = 180;
+                    frog.isRiding=false;
+                }
                 break;
             case 40:// back arrow
             case 83:// s 
-                if (frog.frogXPos<90){
+                if (frog.frogXPos<90 && !frogFuneral){
                     frog.frogXPos+=2*frog.frogSize;
                     frog.frogAngle = 270;
                     frog.isRiding=false;
@@ -63,7 +65,7 @@ window.onload = function init()
                 break;
             case 38: // up arrow
             case 87: // w
-                if (frog.frogXPos>-70){
+                if (frog.frogXPos>-70 && !frogFuneral){
                     frog.frogXPos-=2*frog.frogSize;
                     frog.frogAngle = 90;
                     frog.isRiding=false;
@@ -71,9 +73,11 @@ window.onload = function init()
                 break;
             case 39: // right arrow
             case 68: // d
-                frog.frogYPos+=frog.frogSize;
-                frog.frogAngle = 0;
-                frog.isRiding=false;
+                if (!frogFuneral){
+                    frog.frogYPos+=frog.frogSize;
+                    frog.frogAngle = 0;
+                    frog.isRiding=false;
+                }
                 break;
             case 32: // spacebar
                 if (viewpoint==0){
@@ -93,12 +97,20 @@ function render()
 {
     gl.clear( gl.COLOR_BUFFER_BIT | gl.DEPTH_BUFFER_BIT);
 
-    if (viewpoint==0){
+    if (viewpoint==0 && !frogFuneral){
         var mv = lookAt( vec3(200,0, 200 ), vec3(0,0,0 ), vec3(0.0, 0.0, 1.0) );
     }
-    else if (viewpoint==1){
+    else if (viewpoint==1 && !frogFuneral){
         var mv = lookAt( vec3(frog.frogXPos+80,frog.frogYPos, 50 ), vec3(frog.frogXPos-60,frog.frogYPos,5.0 ), vec3(0.0, 0.0, 1.0) );
     }
+    if(frogFuneral){
+        var mv = lookAt( vec3(0,0, 0 ), vec3(0,0,0 ), vec3(0.0, 0.0, 1.0) );
+        gl.clearColor( 0, 0, 0,1 );
+    }
+    else{
+        gl.clearColor( 0, 0.5, 1, 0.8 );
+    }
+
 
     // Render the cars and update their positions
     for(var j = 0; j<cars.length; j++){
@@ -122,7 +134,6 @@ function render()
 
     //Check if the frog has won
     frog.win();
-
     requestAnimFrame( render );
 }
 

@@ -38,6 +38,8 @@ var logs = [];
 //Define the current viewpoint
 var viewpoint=1;
 
+var frogFuneral=false;
+var startOfGame=true;
 
 var grSize=1;
 // the 6 vertices of the ground

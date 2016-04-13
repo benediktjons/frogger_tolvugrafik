@@ -63,6 +63,7 @@ frog.prototype.logCollisionCheck = function(l){
         }
     }
     if (this.frogYPos<=-95 || this.frogYPos>=100){
+        frogFuneral=true;
         resetGame();
     }
 };
@@ -77,7 +78,6 @@ frog.prototype.inWaterCheck= function(){
 };
 
 frog.prototype.win = function(){
-
     if(this.frogXPos <= -60){
         console.log("WINNING");
         document.getElementById('vic').play();
@@ -88,7 +88,6 @@ frog.prototype.win = function(){
         else{
             location.assign("http://www.visir.is/forsida");
         }
-
     }
 };
 

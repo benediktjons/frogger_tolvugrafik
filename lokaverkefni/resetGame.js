@@ -1,6 +1,9 @@
 function resetGame(){
+    if (!startOfGame){
+        frogFuneral=true;
+    }
+    startOfGame=false;
     cars = [];
-
     logs = [];
 
     //-------------------------------------------------------------------------------------------------
@@ -41,7 +44,6 @@ function resetGame(){
          else if(i>=logsOnLane*3 && i<logsOnLane*4){
             logs.push(new log(-22, 30*(i-logsOnLane*3), -1, 20));
         }
-        console.log(logs[i].diveRange);
         logs[i].logId=i;
     }
     //-------------------------------------------------------------------------------------------------------------------------
@@ -49,4 +51,9 @@ function resetGame(){
 
     frog.frogYPos=0;
     frog.frogXPos=70;
+
+
+    setTimeout(function(){
+        frogFuneral=false;
+    },1500)
 }
