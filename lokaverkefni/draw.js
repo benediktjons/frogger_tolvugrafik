@@ -12,7 +12,12 @@ function drawGround( mv ,size) {
 
     gl.uniform4fv( colorLoc, DARKGREEN );
     
-    mv = mult( mv, scalem( size/4, size, 0 ) );
+    if (viewpoint==0){
+        mv = mult( mv, scalem( size/2, size, 0 ) );
+    }
+    if (viewpoint==1){
+        mv = mult( mv, scalem( size/3, size, 0 ) );
+    }
 
     gl.bindBuffer( gl.ARRAY_BUFFER, groundBuffer );
     gl.vertexAttribPointer( vPosition, 3, gl.FLOAT, false, 0, 0 );
@@ -40,7 +45,7 @@ function drawRiver( mv ,width,size) {
     gl.uniform4fv( colorLoc, BLUE );
     
     mv = mult( mv, translate(-40, 0, 0 ) );
-    mv = mult( mv, scalem( width, size, -0.01) );
+    mv = mult( mv, scalem( width, size, -0.03) );
 
     gl.bindBuffer( gl.ARRAY_BUFFER, groundBuffer );
     gl.vertexAttribPointer( vPosition, 3, gl.FLOAT, false, 0, 0 );
