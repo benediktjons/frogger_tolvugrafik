@@ -137,7 +137,7 @@ function allMusic(){
         document.getElementById("REQ").muted = false;
         document.getElementById("boom").muted = false;
         document.getElementById("splash").muted = false;
-        document.getElementById("myBtn2").style.color = "white";
+        document.getElementById("myBtn2").style.color = "black";
         boolSound = true;
     }
 }

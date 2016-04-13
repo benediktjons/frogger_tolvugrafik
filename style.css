@@ -10,7 +10,6 @@ body {
 
 canvas {
     position: absolute;
-
     margin: -350px 0 0 -350px;
     top: 50%;
     left: 50%;
@@ -25,7 +24,7 @@ h1{
 }
 p{
     font: 22px;
-    color: ORANGE;
+    color: orange;
      font-weight: bold;
      font-family:Times New Roman, Times, serif;
 }
@@ -36,26 +35,42 @@ p{
     border: 2px solid black;
     box-sizing: border-box;
 }
+.right{
+  position:absolute;
+  right: 0.5%;
+  top:450px;
+}
+#lvl-easy{
+  color:black;
+}
+#lvl-medium{
+  color:black;
+  background-color:#fdf496 ;
+}
+#lvl-hard{
+  background-color:red;
+  color:black;
+}
 
 
 button {
-    -moz-box-shadow:inset 0px 1px 3px 0px #91b8b3;
+   -moz-box-shadow:inset 0px 1px 3px 0px #91b8b3;
     -webkit-box-shadow:inset 0px 1px 3px 0px #91b8b3;
     box-shadow:inset 0px 1px 3px 0px #91b8b3;
-    background-color:rgb(20,180,20);
+    background-color:green;
     -moz-border-radius:10px;
     -webkit-border-radius:10px;
     border-radius:5px;
     border:1px solid #001800;
     display:inline-block;
     cursor:pointer;
-    color:white;
+    color:black;
     font-family:Times New Roman;
     font-size:15px;
     font-weight:bold;
     padding:17px 24px;
     text-decoration:none;
-    text-shadow:-6px -6px 14px #2b665e;
+  /*  text-shadow:-6px -6px 14px #2b665e;*/
     margin-left: 46;
     width:110px;
 }
@@ -67,4 +82,8 @@ button:hover{
 }
 button:active{
     color: orange;
+}
+
+button:active;{
+  color:black;
 }
