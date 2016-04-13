@@ -37,7 +37,6 @@ var lookY=0.0;
 var mvLoc;
 
 var cars = [];
-
 var logs = [];
 
 
@@ -53,7 +52,7 @@ var groundVertices = [
     vec3( grSize, grSize, -grSize ), vec3(  -grSize, grSize, -grSize ), vec3(  -grSize, -grSize,  -grSize )
 ];
 
-// fyrir kassan a.k.a froskinn
+// Vertices for a cube
 var cubeVertices = [
     // front side:
     vec3( -0.5,  0.5,  0.5 ), vec3( -0.5, -0.5,  0.5 ), vec3(  0.5, -0.5,  0.5 ),

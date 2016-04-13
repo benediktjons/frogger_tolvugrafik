@@ -1,5 +1,4 @@
 function log(xPos, yPos, Speed, length){
-
     this.logXPos = xPos;
     this.logYPos = yPos;
     this.logSpeed = Speed;
@@ -13,7 +12,7 @@ function log(xPos, yPos, Speed, length){
 }
 
 log.prototype.update = function(){
-    if((this.logId % 2) == 0) this.isATurtle=true;
+    if((this.logId % 3) == 0) this.isATurtle=true;
     if (this.isATurtle) {
         this.logColor=RED;
         if(this.logYPos<this.diveRange && this.logYPos>=-this.diveRange){
@@ -33,12 +32,10 @@ log.prototype.update = function(){
     else{
         this.logYPos += this.logSpeed;
     }
-    if (!this.turtleIsUnderwater){ //Hér þarf að skipta true út fyrir checki á hvort turtle sé í kafi
+    if (!this.turtleIsUnderwater){
         frog.logCollisionCheck(this);
     }
 };
-
-
 
 log.prototype.render = function(mv){
     if (this.isATurtle && this.turtleIsUnderwater) return;

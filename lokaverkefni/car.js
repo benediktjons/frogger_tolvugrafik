@@ -34,7 +34,6 @@ car.prototype.update = function(){
 };
 
 car.prototype.render = function(mv){
-    // Setjum lit a bilinn og setjum i cubebuffer
     gl.uniform4fv(colorLoc, this.carColor);
     gl.bindBuffer(gl.ARRAY_BUFFER, cubeBuffer);
     gl.vertexAttribPointer(vPosition, 3, gl.FLOAT, false, 0, 0);

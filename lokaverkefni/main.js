@@ -9,10 +9,8 @@ window.onload = function init()
     gl.clearColor( 0, 0.5, 1, 0.8 );
 
     gl.enable(gl.DEPTH_TEST);
-
-    //
+ 
     //  Load shaders and initialize attribute buffers
-    //
     var program = initShaders( gl, "vertex-shader", "fragment-shader" );
     gl.useProgram( program );
 
@@ -46,7 +44,7 @@ window.onload = function init()
     //Start a new game
     resetGame();
 
-    //Add event listener for A,S,W,D and spacebar
+    //Add event listener for A,S,W,D, arrow buttons and spacebar
     window.addEventListener("keydown", function(e){
         switch( e.keyCode ) {
             case 37:// left arrow

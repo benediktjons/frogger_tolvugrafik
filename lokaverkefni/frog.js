@@ -18,7 +18,6 @@ frog.prototype.update = function(angle){
 
 frog.prototype.render = function(mv){
     mv = mult(mv, translate(this.frogXPos, this.frogYPos, this.frogWidth));
-    // ef vid viljum rotadea ta kemur tad her
     mv = mult(mv, rotateZ(-this.frogAngle));
     mv = mult(mv, scalem(this.frogSize, this.frogSize +3, this.frogSize));
 
