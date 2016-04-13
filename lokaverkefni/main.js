@@ -97,20 +97,30 @@ window.onload = function init()
                     boolSound = false;
 
                   }
-            else{
-                document.getElementById("REQ").muted = false;
-                document.getElementById("boom").muted = false;
-                document.getElementById("splash").muted = false;
-                document.getElementById("myBtn2").style.color = "white";
-                boolSound = true;
-            }
-
+                else{
+                    document.getElementById("REQ").muted = false;
+                    document.getElementById("boom").muted = false;
+                    document.getElementById("splash").muted = false;
+                    document.getElementById("myBtn2").style.color = "white";
+                    boolSound = true;
+                }
                 break;
 
         }
     });
-document.getElementById("myBtn").addEventListener("click", backMusic);
-document.getElementById("myBtn2").addEventListener("click", allMusic);
+document.getElementById("lvl-easy").addEventListener("click", function(){
+    difficulty=0.3;
+    resetGame();
+});
+document.getElementById("lvl-medium").addEventListener("click", function(){
+    difficulty=0.6;
+    resetGame();
+});
+document.getElementById("lvl-hard").addEventListener("click", function(){
+    difficulty=1;
+    resetGame();
+});
+
 function backMusic() {
       if(boolBackSound === true){
                     document.getElementById('REQ').muted = true;
@@ -123,6 +133,9 @@ function backMusic() {
                     document.getElementById("myBtn").innerHTML = "Mute";
                 }
 }
+document.getElementById("myBtn2").addEventListener("click", allMusic);
+document.getElementById("myBtn2").addEventListener("click", allMusic);
+document.getElementById("myBtn2").addEventListener("click", allMusic);
 
 function allMusic(){
     if(boolSound === true){
@@ -141,7 +154,6 @@ function allMusic(){
         boolSound = true;
     }
 }
-
     render();
 };
 

@@ -45,6 +45,7 @@ var viewpoint=1;
 
 var frogFuneral=false;
 var startOfGame=true;
+var difficulty=1;
 
 var grSize=1;
 // the 6 vertices of the ground

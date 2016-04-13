@@ -1,7 +1,7 @@
 function log(xPos, yPos, Speed, length){
     this.logXPos = xPos;
     this.logYPos = yPos;
-    this.logSpeed = Speed;
+    this.logSpeed = Speed*difficulty;
     this.logColor = BROWN;
     this.logLength = length;
     this.logWidth = 8;
@@ -12,7 +12,11 @@ function log(xPos, yPos, Speed, length){
 }
 
 log.prototype.update = function(){
-    if((this.logId % 3) == 0) this.isATurtle=true;
+    var divTurtles;
+    if (difficulty==0.3) divTurtles=10
+    if (difficulty==0.6) divTurtles=5
+    if (difficulty==1) divTurtles=2
+    if((this.logId % divTurtles) == 0) this.isATurtle=true;
     if (this.isATurtle) {
         this.logColor=RED;
         if(this.logYPos<this.diveRange && this.logYPos>=-this.diveRange){

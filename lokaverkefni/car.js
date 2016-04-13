@@ -6,7 +6,7 @@ function car(color, yPos, xPos, speed){
     this.carLength = 15.0 ;
     this.carHeight = 5.0 ;
     this.carColor = color ;
-    this.carSpeed = speed;
+    this.carSpeed = speed*difficulty;
     this.ShiftX = - 0.2;
     this.ShiftY = - 1;
     this.ShiftZ = 7;
