@@ -93,6 +93,7 @@ window.onload = function init()
                     document.getElementById("REQ").muted = true;
                     document.getElementById("boom").muted = true;
                     document.getElementById("splash").muted = true;
+                    document.getElementById("vic").muted = true;
                     document.getElementById("myBtn2").style.color = "orange";
                     boolSound = false;
 
@@ -101,6 +102,7 @@ window.onload = function init()
                     document.getElementById("REQ").muted = false;
                     document.getElementById("boom").muted = false;
                     document.getElementById("splash").muted = false;
+                    document.getElementById("vic").muted = false;
                     document.getElementById("myBtn2").style.color = "black";
                     boolSound = true;
                 }
@@ -150,6 +152,7 @@ function allMusic(){
         document.getElementById("REQ").muted = true;
         document.getElementById("boom").muted = true;
         document.getElementById("splash").muted = true;
+        document.getElementById("vic").muted = true;
         document.getElementById("myBtn2").style.color = "orange";
         boolSound = false;
 
@@ -158,6 +161,7 @@ function allMusic(){
         document.getElementById("REQ").muted = false;
         document.getElementById("boom").muted = false;
         document.getElementById("splash").muted = false;
+        document.getElementById("vic").muted = false;
         document.getElementById("myBtn2").style.color = "black";
         boolSound = true;
     }
